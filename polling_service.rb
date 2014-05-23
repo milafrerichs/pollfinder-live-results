@@ -1,10 +1,7 @@
-require 'rubygems'
-require 'bundler'
 require 'sinatra/base'
 require 'sinatra'
 require 'sinatra/cross_origin'
 require_relative 'ms_polling'
-Bundler.require
 
 module PollingService
   class App < Sinatra::Base
