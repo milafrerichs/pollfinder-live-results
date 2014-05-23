@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'sinatra'
-require 'sinatra/cross_origin'
 require_relative 'ms_polling'
 
 module PollingService
