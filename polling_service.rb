@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra'
 require_relative 'ms_polling'
+require_relative 'live-results'
 
 module PollingService
   class App < Sinatra::Base
@@ -18,6 +19,10 @@ module PollingService
       ms = MuensterPollStation.new
       { wahlbezirk_nr: ms.find(street, nr) }.to_json
 
+    end
+    get '/live-results' do
+      content_type :js
+      LiveResults.new.results
     end
   end
 end
